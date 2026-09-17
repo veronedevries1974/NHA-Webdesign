@@ -27,299 +27,294 @@
         <script src="js/main.js" defer></script>
         <!--src:pad naar JS-bestand-->
 
-<style>
-/*Hele pagina*/
-*html, body {
-    margin: 0;/*CSS Box Model element-padding-border-marge*/
-    padding: 0;
-    height: 100%;
-}
+        <style>
+            * html, body {
+                margin: 0; /* CSS Box Model element-padding-border-marge */
+                padding: 0;
+                height: 100%;
+            }
 
-/*Body*/
-body {
-    font-family: 'Montserrat', sans-serif;/*Google Font*/
-    background-color: #0b0b54;/*donkerblauwe achtergrond*/
-    color: antiquewhite;/*witte tekstkleur*/ 
-    padding: 20px 5px;/*padding boven/onderkant*/
-    max-width: 1200px;/*breedte*/ 
-    margin: 0 auto;/*horizontaal in het midden*/
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);/*schaduw op donkere achtergrond*/
-}
+            body {
+                font-family: 'Montserrat', sans-serif;/*Google Font*/
+                background-color: #0b0b54;/*donkerblauwe achtergrond*/
+                color: antiquewhite;/*witte tekstkleur*/ 
+                padding: 20px 5px;/*padding boven/onderkant*/
+                max-width: 1200px;/*breedte*/ 
+                margin: 0 auto;/*horizontaal in het midden*/
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);/*schaduw op donkere achtergrond*/
+            }
 
-/*Profielfoto*/
-#profielfoto {
-    text-align: center;/*midden*/ 
-    padding: 20px 0;/*padding rond foto*/
-}
+            #profielfoto {
+                text-align: center;/*midden*/ 
+                padding: 20px 0;/*padding rond foto*/
+            }
 
-#profielfoto img {
-    display: inline-block;/*block level element als inline element*/ 
-    position: relative; 
-    width: 325px; 
-    height: 200px; 
-    border-radius: 5px;/*afronding rand*/ 
-    border: 3px solid #957dfc; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);/*schaduw */
-}
-#profielfoto figcaption h1 {
-    text-align: center;/*tekst gecentreerd*/ 
-    white-space: nowrap;/*tekst op één regel*/ 
-    background-color: transparent;/*achtergrond doorzichtig*/ 
-    color: rgb(253, 249, 214);/*tekstkleur*/ 
-    margin-top: 10px;/*marge boven*/ 
-}
+            #profielfoto img {
+                display: inline-block;/*block level element als inline element*/ 
+                position: relative; 
+                width: 325px; 
+                height: 200px; 
+                border-radius: 5px;/*afronding rand*/ 
+                border: 3px solid #957dfc; 
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);/*schaduw */
+            }
+            #profielfoto figcaption h1 {
+                text-align: center;/*tekst gecentreerd*/ 
+                white-space: nowrap;/*tekst op één regel*/ 
+                background-color: transparent;/*achtergrond doorzichtig*/ 
+                color: rgb(253, 249, 214);/*tekstkleur*/ 
+                margin-top: 10px;/*marge boven*/ 
+            }
                 
-/*Titel en Navigatiebalk*/
-#titel {
-    text-align: center;/*tekst gecentreerd*/ 
-    background-color: #957dfc;/*achtergrondkleur*/ 
-    padding: 15px;/*padding rond element*/ 
-    margin: 15px 0;/*marge onder element*/ 
-    border-left: 4px solid #7b2cbf;/*paarse zijlijn*/ 
-    border-radius: 5px;/*afronding hoeken*/
-}
+            #titel {
+                text-align: center;/*tekst gecentreerd*/ 
+                background-color: #957dfc;/*achtergrondkleur*/ 
+                padding: 15px;/*padding rond element*/ 
+                margin: 15px 0;/*marge onder element*/ 
+                border-left: 4px solid #7b2cbf;/*paarse zijlijn*/ 
+                border-radius: 5px;/*afronding hoeken*/
+            }
 
-#titel h1 {
-    color: antiquewhite; 
-    font-variant: small-caps;
-    font-size: 3.5rem;/*3.5 x 16 px*/ 
-    font-weight: 400;/*vet*/
-}
-    
+            #titel h1 {
+                color: antiquewhite; 
+                font-variant: small-caps;
+                font-size: 3.5rem;/*3.5 x 16 px*/ 
+                font-weight: 400;/*vet*/
+            }
+
 /* Navigatie */
-ul a {
-    color: #957dfc;
-    text-decoration: none;/*niet onderstreept*/
-    display: block;/*Inline element <a> als Block Level element*/ 
-    padding: 12px 20px; 
-}
+            ul a {
+                color: #957dfc;
+                text-decoration: none;/*niet onderstreept*/
+                display: block;/*Inline element <a> als Block Level element*/ 
+                padding: 12px 20px; 
+            }
 
-li {
-    display: inline-block;/*Block Level element (cel) als Inline element naast elkaar*/
-    min-width: 100px;
-    text-align: center;
-    border: 1px solid #7b2cbf;
-    border-left: 4px solid #7b2cbf; /*paarse zijlijn*/
-    border-radius: 5px;
-    background-color: antiquewhite;
-    overflow: hidden;/*houdt alles in de cel*/ 
-    margin: 5px;/*ruimte tussen knoppen*/
-}  
+            li {
+                display: inline-block;/*Block Level element (cel) als Inline element naast elkaar*/
+                min-width: 100px;
+                text-align: center;
+                border: 1px solid #7b2cbf;
+                border-left: 4px solid #7b2cbf; /*paarse zijlijn*/
+                border-radius: 5px;
+                background-color: antiquewhite;
+                overflow: hidden;/*houdt alles in de cel*/ 
+                margin: 5px;/*ruimte tussen knoppen*/
+            }  
 
 /*Hyperlinks LVHA*/
-a:link, a:visited {
-    color: #957dfc;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-a:hover { 
-    color: #beb1fa; 
-    text-decoration: underline; 
-    font-weight: bolder;
-}
-a:active { 
-    color: #beb1fa; 
-}
+            a:link, a:visited {
+                color: #957dfc;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            a:hover { 
+                color: #beb1fa; 
+                text-decoration: underline; 
+                font-weight: bolder;
+            }
+            a:active { 
+                color: #beb1fa; 
+            }
 
 /*Main*/
-main, .cv-container {
-    padding-bottom: 180px;/*aanpassen als inhoud achter footer valt*/
-    box-sizing: border-box;
-}
+            main, .cv-container {
+                padding-bottom: 180px;/*aanpassen als inhoud achter footer valt*/
+                box-sizing: border-box;
+            }
 
 /*Tekstvakken*/
-#persoonlijk, #werkervaring, #opleidingen {
-    padding: 20px;
-    border-bottom: 2px solid antiquewhite;/*lijn*/
-    color: antiquewhite;/*witte tekst op donkerblauwe achtergrond*/
-}             
+            #persoonlijk, #werkervaring, #opleidingen {
+                padding: 20px;
+                border-bottom: 2px solid antiquewhite;/*lijn*/
+                color:#191970/* donkerblauwe tekst*/
+            }             
 
 /*Elementen*/
-h1, h2 {
-    background-color: transparent; 
-    font-weight: 400;/*letterdikte*/
-    padding: 5px;/*binnenruimte*/ 
-    margin-top: 5px;/*buitenruimte*/ 
-}
-h2 {
-    display: inline-block; 
-    color: #191970;/*donkerblauwe tekst op witte achtergrond*/
-    background-color: antiquewhite; 
-    padding: 5px 15px;/*ruimte*/
-    border-radius: 5px;/*afronding*/ 
-}
-h3, p {
-    color: inherit; /*erft tekstkleur*/
-    background-color: transparent;/*doorzichtig*/   
-    line-height: 1.6;/*regelafstand*/
-}
+            h1, h2 {
+                background-color: transparent; 
+                font-weight: 400;/*letterdikte*/
+                padding: 5px;/*binnenruimte*/ 
+                margin-top: 5px;/*buitenruimte*/ 
+            }
+            h2 {
+                display: inline-block; 
+                color: #191970;/*donkerblauwe tekst op witte achtergrond*/
+                background-color: antiquewhite; 
+                padding: 5px 15px;/*ruimte*/
+                border-radius: 5px;/*afronding*/ 
+            }
+            h3, p {
+                color: inherit; /*erft tekstkleur*/
+                background-color: transparent;/*doorzichtig*/   
+                line-height: 1.6;/*regelafstand*/
+            }
 
-/* Tekstonderdelen*/
-#introductie, #achtergrond {
-    background-color: #957dfc;
-    border-left: 4px solid #7b2cbf;/*paarse zijlijn*/
-    padding: 30px 15px;/*padding*/ 
-    margin: 15px 15px;/*marge*/ 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);/*schaduw*/ 
-    border-radius: 5px;/*afronding*/
-}
+/* Tekstonderdelen 
+Block Formatting Context (BFC)
+Onzichtbare muur rondom gefloate elementen toegevoegd aan de ouders*/
+            #introductie, #achtergrond {
+                display: flow-root;/*BFC op parents*/
+                background-color: #957dfc;
+                border-left: 4px solid #7b2cbf;/*paarse zijlijn*/
+                padding: 30px 15px;/*padding*/ 
+                margin: 15px 15px;/*marge*/ 
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);/*schaduw*/ 
+                border-radius: 5px;/*afronding*/
+            }
 
-#introductie p { /*ruimte tussen <p><p>*/
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
+            #introductie p { /*ruimte tussen <p><p>*/
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
 
-/*dwingt alle tekst binnen de paarse vlakken antiquewhite*/
-#introductie p, #introductie h3, #achtergrond p, #achtergrond h3 {
-    color: antiquewhite !important;
-}
+/*Tekst cv wit*/
+            #introductie p, #introductie h3, #achtergrond p, #achtergrond h3 {
+                color: antiquewhite;
+            }
 
 /*Afbeelding naast tekst*/
-#code-space {
-    display: flex; 
-    flex-direction: column;/*h3 en <p> onder elkaar*/
-    justify-content: center;/*verticale centrering tekst*/
-    width: 350px; 
-    height: 200px; 
-    padding: 20px;/*ruimte rond tekst*/         
-    border-radius: 5px;/*afronding*/ 
-    border: 3px solid #957dfc;/*paarse rand*/ 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);/*schaduw*/
-    background-color: #1a1a3a;/*donkere rand*/
-}
-#code-space {
-    float: left;/*foto naar links*/             
-    margin-right: 25px;/*ruimte foto en tekst rechterkant */
-    margin-bottom: 15px;/*ruimte onder foto als tekst op klein scherm langer is*/
-    width: 350px; 
-    height: 200px; 
-    border-radius: 5px; 
-    border: 3px solid #957dfc;/*paarse rand*/ 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);/*schaduw*/
-    object-fit: cover;/*voorkomt vervorming foto*/
-}
+            #code-space {
+                float: left;/*foto links*/             
+                margin-right: 25px;/*ruimte foto en tekst rechterkant*/
+                margin-bottom: 15px;/*ruimte onder foto*/
+                width: 450px; 
+                height: 300px; 
+                border-radius: 5px; 
+                border: 3px solid #7b2cbf;/*paarse rand*/
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);/*schaduw*/
+                object-fit: cover;/*voorkomt vervorming foto*/
+            }
 
 /*CV onderdelen*/
-.persoonlijke-gegevens {
-    padding: 20px 20px; /*ruimte element-border 15 boven/onder, 20 links/rechts*/
-    margin: 8px 0;
-    line-height: 1.5; /*regelafstand*/
-    border-bottom: 1px dashed rgba(253, 249, 214, 0.3); /* Gecorrigeerd: lichtgeel/antiquewhite streepje met transparantie in plaats van grijs */
-    
-}
-.werk {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(253, 249, 214, 0.3); 
-}
-.werk h3 {
-    margin: 0 0 5px 0; /*ruimte om h3 element*/
-    font-size: 1.1em; /*vergroot letter*/
-    color: antiquewhite; /* Zorgt dat de functietitel goed leesbaar is */
-}
-.bedrijf {
-    margin: 0;
-    color: #beb1fa; /* Gecorrigeerd: veranderd van donkerblauw naar lichtpaars zodat het prachtig opvalt op de donkere achtergrond */
-    font-style: italic;
-}
-.opleiding {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed rgba(253, 249, 214, 0.3); 
-}
-.opleiding h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1em;
-    color: antiquewhite;
-}
-.instituut {
-    margin: 0 0 5px 0;
-    color: #beb1fa; /* Gecorrigeerd: veranderd naar lichtpaars voor consistentie en leesbaarheid */
-    font-style: italic;
-}
-/*NHA-lijst (Gecorrigeerd om te voorkomen dat lijstjes de stijl van de navigatieknoppen overnemen) */
-.cursus-lijst {
-    margin: 10px 0 0 0;
-    padding-left: 20px;
-    color: antiquewhite; /* Gecorrigeerd: lijsttekst helder gemaakt */
-    list-style-type: disc; /* Zorgt voor nette standaard opsommingstekens (bullet points) */
-}
-.cursus-lijst li {
-    display: list-item; /* ESSENTIEEL: Overschrijft de 'inline-block' van je menu-li */
-    width: auto; /* ESSENTIEEL: Overschrijft de vaste 100px breedte van je menu-li */
-    height: auto; /* ESSENTIEEL: Overschrijft de vaste 22px hoogte van je menu-li */
-    background-color: transparent; /* ESSENTIEEL: Verwijdert de antiquewhite achtergrond van je menu-li */
-    border: none; /* ESSENTIEEL: Verwijdert de paarse rand van je menu-li */
-    padding: 0; /* Reset de padding */
-    margin-bottom: 5px;
-    text-align: left; /* Lijstjes horen links uitgelijnd te zijn */
-    color: antiquewhite;
-}
-
-/*Footer*/
-#footer {
-    background-color: #2b2b2b; /* achtergrondkleur */
-    color: #ffffff; /* tekstkleur */
-    padding: 20px 20px; /* Gecorrigeerd naar 20px zoals in je commentaar beschreven staat */
-    display: flex; /* flexbox dwingt tot kolommen naast elkaar */
-    flex-wrap: wrap; /* bij smal scherm kolommen onder elkaar */
-    justify-content: space-between; /* verdeling kolommen over de breedte */
-    gap: 20px; /* ruimte tussen kolommen */
-    box-sizing: border-box; /* Voorkomt scrollbalken door de padding */
-
-    /* GEBREKEN OPGESTEEKD & OPGESCHOOND VOOR FIXED: */
-    position: fixed;   /* Plakt vast op het scherm */
-    bottom: 0;         /* Zet de footer strak op de absolute bodem (wist de blauwe rand) */
-    left: 0;           /* Lijnt de footer uit aan de absolute linkerkant */
-    width: 100%;       /* Trekt de footer volledig door naar de rechterkant */
-    z-index: 99999;    /* Dwingt de footer om áltijd bovenop de blauwe achtergrond en CV te zweven */
-}
-
-#footer * {
-    margin-bottom: 0;
-}
-
-.footer-sectie { /* vier secties voor ATS */
-    flex: 1; /* kolommen even breed */
-    min-width: 200px; /* kolommen onder elkaar op mobiel */
-    background-color: transparent; /* Zorgt ervoor dat de secties de donkere achtergrond van de footer behouden */
-}   
-
-.footer-sectie h3 {
-    color: #f3e8ff; /* tekstkleur */
-    background-color: transparent; /* Voorkomt dat de h3 een eigen achtergrondkleur pakt */
-    font-size: 1.1em; /* letters 10% groter dan normaal */
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding: 0; /* Reset de algemene padding die je eerder op koppen hebt gezet, zodat het strak in de kolom staat */
-}
-
-/* NIEUW & ESSENTIEEL: Zorgt ervoor dat de algemene regel (h3, p { color: inherit; }) 
-   hier netjes wordt overschreven met wit, zonder dat het botst met de introductie */
-.footer-sectie p { 
-    color: #ffffff !important; 
-    background-color: transparent; 
-    margin: 5px 0;
-}
-
-/* Links specifiek binnen de footer */
-.footer-sectie a:link, 
-.footer-sectie a:visited {
-    color: #f3e8ff;
-    text-decoration: none;
-    transition: color 0.2s ease; /* Toegevoegd: zorgt voor een vloeiende kleurovergang bij hover */
-}
-.footer-sectie a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-</style>
-
+            .persoonlijke-gegevens {
+                padding: 20px 20px; /*ruimte element-border 15 boven/onder, 20 links/rechts*/
+                margin: 8px 0;
+                line-height: 1.5;/*regelafstand*/
+                border-bottom: 1px dashed rgba(253, 249, 214, 0.3);/*lichte streep onderaan*/
+            }
+            .werk {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed rgba(253, 249, 214, 0.3);/*lichte streep onderaan*/ 
+            }
+            .werk h3 {
+                margin: 0 0 5px 0;/*ruimte om h3*/
+                font-size: 1.1em; 
+                color: antiquewhite;
+            }
+            .bedrijf {
+                margin: 0;
+                color: #beb1fa; /* Gecorrigeerd: veranderd van donkerblauw naar lichtpaars zodat het prachtig opvalt op de donkere achtergrond */
+                font-style: italic;
+            }
+            .opleiding {
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed rgba(253, 249, 214, 0.3);/*lichte streep onderkant*/ 
+            }
+            .opleiding h3 {
+                margin: 0 0 5px 0;/*ruimte om h3*/
+                font-size: 1.1em;
+                color: antiquewhite;
+            }
+            .instituut {
+                margin: 0 0 5px 0;
+                color: #beb1fa; 
+                font-style: italic;
+            }
+            .cursus-lijst {
+                margin: 10px 0 0 0;
+                padding-left: 20px;
+                color: antiquewhite; 
+                list-style-type: disc;/*bulletpoints*/
+            }
+            .cursus-lijst li {/*overschrijven van navigatie-li anders hetzelfde*/
+                display: list-item; /*is list-item, geen menu*/
+                width: auto; /*andere breedte dan navigatie-li*/
+                height: auto; /*andere hoogte dan navigatie-li*/
+                background-color: transparent; /*andere achtergrond dan navigatie-li*/
+                border: none; /*geen paarse rand zoals navigatie-li*/
+                padding: 0; /*geen padding zoals navigatie-li*/
+                margin-bottom: 5px;
+                text-align: left; /*links uitlijnen van lijst*/
+                color: antiquewhite;
+            }
+            
+/*Contactformulier*/
+            input[type="text"], input[type="email"], textarea, button{
+                display:block;
+                margin: 15px 0px;
+                width: 400px;
+                box-sizing: border-box;
+                border-radius: 4px; box-shadow: inset 2px 2px 5px #191970;
+            }
+            textarea{
+                min-width: auto;
+                min-height: 200;
+                padding:5px 4px;
+            }
+            button:active{
+                background-color: #7b2cbf;
+                color:antiquewhite;
+                border-radius: 4px; box-shadow: inset 2px 2px 5px #191970;
+            }/*Footer*/
+            #footer {
+                background-color: #2b2b2b; 
+                color: #ffffff; 
+                padding: 20px 20px; 
+                display: flex;/*CSS Flexbox maakt kolommen naast elkaar*/
+                flex-wrap: wrap;/*smal scherm kolommen onder elkaar!*/
+                justify-content: space-between;/*verdeling kolommen in de breedte*/
+                gap: 20px;/*ruimte tussen kolommen*/
+                box-sizing: border-box;/*elementen footer binnen breedte van pagina, anders komen er scrollbalken*/
+                position: fixed;/*positie vastgezet*/
+                bottom: 0;/*vastgezet op absolute bodem*/
+                left: 0;/*vastgezet op absolute linkerkant */
+                width: 100%;/*volledig breedte*/
+                z-index: 99999;/*webpagina-lagen als stapel papier, footer hoog getal dan bovenop, ander valt achter andere elementen*/
+            }
+            #footer * {
+                margin-bottom: 0;
+            }
+            .footer-sectie {/* vier secties voor ATS */
+                flex: 1;/*kolommen even breed*/
+                min-width: 200px;/*kolommen onder elkaar op mobiel!*/
+                background-color: transparent;/*donkere achtergrond footer houden*/
+            }   
+            .footer-sectie h3 {
+                color: #f3e8ff; 
+                background-color: transparent;/*h3 geen eigen achtergrondkleur maar kleur footer*/
+                font-size: 1.1em;/*rem en em: 1.1 is 10% groter*/
+                margin-top: 0;
+                margin-bottom: 10px;
+                padding: 0;/*verwijderen van eerdere h3 padding*/
+            }
+            .footer-sectie p{
+                color:#f3e8ff;
+            }
+            /* Links specifiek binnen de footer */
+            .footer-sectie a:link {
+                color: #f3e8ff;
+                text-decoration: none;
+                transition: color 0.2s ease;/*vloeiende kleurovergang bij hover*/
+            }
+            .footer-sectie a:visited {
+                color: #f3e8ff;
+                text-decoration: none;
+                transition: color 0.2s ease;/* vloeiende kleurovergang bij hover*/
+            }
+            .footer-sectie a:hover {
+                color: #ffffff;
+                text-decoration: underline;
+            }
+        </style>
     </head>
-    <body>
+
+   <body>
         <header id="top">
             <div id="profielfoto">
-                <img src="../../assets/images/verone_foto.jpg" alt="profielfoto Verone de Vries" title="foto - fotograaf">
+                <img src="images/verone_foto.jpg" alt="profielfoto Verone de Vries" title="foto - fotograaf">
             </div>
             <div id="titel">
                 <h1 id="naam-verone"><strong>Verone de Vries</strong></h1> 
@@ -328,7 +323,7 @@ h3, p {
                 <p><em>Focus op hybride app-ontwikkeling en IoT-vraagstukken</em></p> 
             </div> 
 
-            <nav><!--interne hyperlinks voor navigatie in de website-->
+            <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projecten.html">Projecten</a></li>
@@ -338,70 +333,50 @@ h3, p {
             </nav>
         </header>
 
-
         <main>
-    <!-- Sectie Introductie -->
-    <div id="introductie">
-        <img id="code-space" src="../../assets/images/pexels-negativespace-97077.jpg" alt="code-space" title="foto &copy; Negative Space">
-        <form action="https://formspree.io/f/xppalrgl" method="POST">
-            <Fieldset>
-                <legend>Contactformulier</legend>
-                <label for="naam">Uw naam:</label>
-                <input type="text" id="naam" name="naam_invoer" placeholder="Typ hier uw naam" required>
-
-                <label for="email">Uw emailadres:</label>
-                <input type="email" id="email" name="email_invoer" placeholder="Typ hier uw emailadres" required>
+        <!-- Sectie Introductie -->
+            <div id="introductie">
+                <img id="code-space" src="images/pexels-negativespace-97077.jpg" alt="code-space" title="foto &copy; Negative Space">
             
-                <label for="bericht">Uw bericht</label>
-                <textarea id="bericht" name="bericht_invoer" placeholder="Typ hier uw bericht"></textarea>
-            </Fieldset>
-        </form>
-        
-        <div style="clear: both;"></div>
-    </div>
-        <!-- Footer -->
+                <form action="https://formspree.io/f/xppalrgl" method="POST">
+                    <fieldset>
+                        <legend><h2>Contactformulier</h2></legend>
+                        <table>
+                            <tr>
+                                <td><label for="naam">Uw naam:</label></td>
+                                <td><input type="text" id="naam" name="naam_invoer" placeholder="Typ hier uw naam" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Uw emailadres:</label></td>
+                                <td><input type="email" id="email" name="email_invoer" placeholder="Typ hier uw emailadres" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="bericht">Uw bericht:</label></td>
+                                <td><textarea id="bericht" name="bericht_invoer" placeholder="Typ hier uw bericht" required></textarea></td>
+                            </tr>   
+                            <tr>
+                                <td colspan="2">
+                                <button type="submit" id="verzend" name="verzend_invoer">Verzenden</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="clearfix"></div> 
+        </main>
+
         <footer id="footer">
-        
             <div class="footer-sectie">
                 <h3>Email</h3>
                 <p><a href="mailto:veronedevries@gmail.com">veronedevries@gmail.com</a></p>
-              
             </div>
-        
+
             <div class="footer-sectie">
                 <h3>Telefoon</h3>
-                <p><a href="tel:0613063429">06 - 13 06 34 29</p>
+                <p><a href="tel:0613063429">06 - 13 06 34 29</a></p>
             </div>
-        
-            <div class="footer-sectie">
-                <h3>&copy; 2026</h3>
-                <p>Alle rechten voorbehouden</p>
-            </div>
-        </footer>
-    </body>
-</html>
 
-
-
-        
-    </main>
-
-
-
-            <!-- Footer -->
-        <footer id="footer">
-        
-            <div class="footer-sectie">
-                <h3>Email</h3>
-                <p><a href="mailto:veronedevries@gmail.com">veronedevries@gmail.com</a></p>
-              
-            </div>
-        
-            <div class="footer-sectie">
-                <h3>Telefoon</h3>
-                <p><a href="tel:0613063429">06 - 13 06 34 29</p>
-            </div>
-        
             <div class="footer-sectie">
                 <h3>&copy; 2026</h3>
                 <p>Alle rechten voorbehouden</p>
