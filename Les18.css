@@ -1,4 +1,80 @@
-h1 {
-    font-family: Google sans-serif;
-    background-image: url();
+/*CSS reset bovenaan*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Header, main en footer buitenrand gelijk via de body*/
+body {/*extern lettertype en pagina in het midden van het scherm*/
+    font-family: 'Product Sans', 'Google Sans', sans-serif;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*HEADER*/
+header {
+    display: grid;/*activeert CSS Grid*/
+    grid-template-columns: repeat(12, 1fr);/*1fractie = 12columns = volledige breedte*/
+    gap: 20px;
+    border-top: 5px solid darkolivegreen;
+    border-bottom: 5px solid darkolivegreen;
+}
+header h1 {
+    grid-column: span 12;/*12columns = volledige breedte*/
+    color:whitesmoke;
+    font-size: 6rem;/*6x16px of 600%*/
+    font-weight: 400;/*vet*/
+    text-transform: uppercase;
+    /*achtergrondafbeelding h1*/
+    background-image: url(Les18/pexels-strannik-sk-36388433.jpg);
+    background-size: cover;/*vult hele h1 zonder vervorming*/
+    background-position: center;/*foto midden*/
+    background-repeat: no-repeat;
+    padding: 60px 20px;/*binnenruimte*/
+    text-align: center;/*centreert de titel*/
+    border-radius: 8px;/*foto afgeronde hoeken*/
+}
+header p {
+    grid-column: span 12;/*12columns = volledige breedte*/
+    font-size: 1.2rem;/*1.2x16px of 120%*/
+    font-weight: 200;
+    color: darkolivegreen;
+    text-transform:uppercase;
+    text-align: center;
+    margin-top: -10px;/*negatieve marge = minder afstand*/
+}
+header nav {
+    grid-column: span 12;/*12 columns = volledige breedte*/
+}
+header nav ul {
+    display: flex;/*activeert FlexboxModel*/
+    flex-direction: row;/*knoppen naast elkaar*/
+    list-style-type: none;/*geen opsommingstekents*/
+    padding: 0;/*verwijdert standaard ruimte ul*/
+    margin: 0;/*verwijdert standaard ruimte ul*/
+    gap: 20px;/*ruimte tussen knoppen*/
+}
+header nav a {
+    text-decoration: none;/*geen onderstreep*/
+    color:darkolivegreen;
+    font-size: 1.2rem;
+    font-weight: 100;
+    transition: 0.5s;/*kleurverandering van 0.5 seconden*/
+}
+header nav a:hover {
+    color:olive;/*mouse-over 0.5 seconden*/
+    text-decoration: underline;/*mouse-over onderstreept*/
+}
+
+/*MAIN*/
+main {
+    display:grid;/*activeert CSS Grid*/
+    grid-template-columns: 1fr 1fr;/*2 delen = 1 deel 2 columns en 1 deel 9 columns*/
+    gap: 20px;/*ruimte tussen delen*/
 }
