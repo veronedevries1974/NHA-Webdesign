@@ -26,7 +26,7 @@ header {
     border-top: 5px solid darkolivegreen;
     border-bottom: 5px solid darkolivegreen;
     border-radius: 8px;/*afgeronde hoeken*/
-    margin-bottom: -2rem;/*iets kleinere ruimte*/
+    margin-bottom: 1rem;
 }
 header h1 {
     grid-column: span 12;/*12columns=volledige breedte*/
@@ -86,24 +86,27 @@ header nav a:hover {
     text-decoration: underline;/*mouse-over onderstreept*/
     font-weight: bold;
 }
+
 /*MAIN*/
 main {
     display: grid;
-    grid-template-columns: repeat(12 1fr); /* Mobiel: Alles in één brede kolom onder elkaar */
+    grid-template-columns: repeat(12, 1fr); /* AANGEPAST: Let op de komma tussen 12 en 1fr! */
     gap: 30px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 /*WETENSWAARDIGHEDEN*/
 .deel1 {
-    grid-column: span 2;
-    grid-template-rows: min-content;
+    grid-column: 1 / span 2; /* Start in kolom 1 en is 2 kolommen breed */
     color: darkolivegreen;
-    background-color:antiquewhite;
-    padding: 20px;
+    background-color: antiquewhite;
+    padding: 10px;
     border-radius: 8px;
+    margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: fit-content;
 }
 .deel1 ul {
     padding-left: 20px;
@@ -116,44 +119,66 @@ main {
 
 /*BEZIENSWAARDIGHEDEN*/
 .deel2 {
-    grid-column: span 9;
-    grid-template-rows: min-content;
-    direction: ;
-    display: flex;/*activeert FlexboxModel*/
+    grid-column: 3 / span 9; /* Start in kolom 3 en is 9 kolommen breed. Kolom 12 blijft leeg! */
+    display: flex; /* Activeert FlexboxModel om de twee museumdivs onder elkaar te zetten */
     flex-direction: column;
     gap: 20px;
+    margin-top: 20px;
+}
+.deel2 h2 {
+    color: darkolivegreen;
+    font-weight: bold;
+    padding: 10px;
 }
 
 /*blokken binnen de bezienswaardigheden */
 .deel2 div {
     color: antiquewhite;
-    background-color:darkolivegreen;
+    background-color: darkolivegreen;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
+    
+    /* Binnenkant van het blok: tekst links, foto rechts via flexbox */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-/* Afbeeldingen responsive maken */
-figure {
-    margin: 15px 0 0 0;
+/* Zorgt dat alle tekstregels onder elkaar blijven staan aan de linkerkant */
+.deel2 div h3, 
+.deel2 div p {
+    flex: 1;
+    display: block;
+    width: 100%;
 }
 
-figure img {
-    position: absolute;
-    left:500px;
+/* De container (figure) die de afbeelding en de link netjes rechts bundelt */
+.deel2 figure {
+    margin: 0;
+    width: 35%; /* De foto-container pakt 35% van de rechterruimte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0; /* Voorkomt dat de tekst de foto platdrukt */
+}
+
+img {
     max-width: 100%;
     height: auto;
-    display: block;
     border-radius: 4px;
-}
-
-figcaption {
-    margin-top: 8px;
-    font-size: 0.9em;
+    position: static; /* Schakelt de oude storende 'absolute' positionering uit */
 }
 
 
+/* Behoudt je eigen linkkleur binnen de bezienswaardigheden */
+.deel2 figcaption a {
+    color: antiquewhite;
+    text-decoration: underline;
+}
 /* ==========================================
    DESKTOP (Schermen vanaf 768px breed)
    ========================================== */
